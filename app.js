@@ -38,7 +38,7 @@ app.command("/update", async ({ command, ack, say }) => {
 
     const params = command.text.split(' ') // ID, NewName
     
-    endpoint = `${endpoint}/${params[0]}`
+    endpoint = `${process.env.API_URL}/${params[0]}`
     
     // Update name only for now
     const bodyParameters = {
@@ -72,7 +72,7 @@ app.command("/delete", async ({ command, ack, say }) => {
 
         axios.delete(`${endpoint}`, config)
         .then((response) => {
-          say(`Client/Application ID Removed: ${response.data.name}`);
+          say(`Client/Application ID Removed: ${command.text}`);
           console.log(`Client/Application ID Removed: ${command.text}`);
         })
         .catch((error) => {
@@ -86,7 +86,7 @@ app.command("/retrieve", async ({ command, ack, say }) => {
     await ack();
 
     if (command.text) {
-      endpoint = `${endpoint}/${command.text}`
+      endpoint = `${process.env.API_URL}/${command.text}`
     }
 
     const config = {
