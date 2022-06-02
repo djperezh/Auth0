@@ -64,7 +64,7 @@ app.command("/delete", async ({ command, ack, say }) => {
       await ack();
       
       if (command.text) {
-        endpoint = `${endpoint}/${command.text}`
+        endpoint = `${process.env.API_URL}/${command.text}`
       
         const config = {
           headers: { Authorization: `Bearer ${bearerToken}` }
@@ -72,8 +72,8 @@ app.command("/delete", async ({ command, ack, say }) => {
 
         axios.delete(`${endpoint}`, config)
         .then((response) => {
-          say(`Tenant: ${response.data.tenant}, Client/Application: ${response.data.name}`);
-          console.log(`Tenant: ${response.data.tenant}, Removed Client/Application ID: ${command.text}`);
+          say(`Client/Application ID Removed: ${response.data.name}`);
+          console.log(`Client/Application ID Removed: ${command.text}`);
         })
         .catch((error) => {
           console.error(error);
