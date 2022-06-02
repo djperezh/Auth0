@@ -12,6 +12,9 @@ Auth0 Tenant Client/Application API
 
 - [Auth0](https://auth0.com/docs/api/management/v2/#!/Clients/delete_clients_by_id)
 - [Slack bolt-js](https://api.slack.com/start/building/bolt-js)
+- [Slack API](https://api.slack.com/apps)
+
+> Enable `Slash Commands` in the Salck App configuration including the CRUD commands: Create, Retrieve, Update, Delete. You will need your own API URL Endpoint for this (you can get it once you start the server... see following information about `Dev Setup`)
 
 Project Structure
 ------------
@@ -22,8 +25,9 @@ Project Structure
 ## Dev SetUp
 
 - You need Auth0 Account and Slack Account (Free account are enough)
+- YOu need to create an Slack App using the [Slack API](https://api.slack.com/apps)
 - Clone [repository](https://github.com/djperezh/Auth0)
-- Update the values in the .env file using your own tokens 
+- Update the values in the .env file using your own tokens
 
 ```bash
 SLACK_BOT_TOKEN=<SLACK_BOT_TOKEN>
