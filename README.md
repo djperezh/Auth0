@@ -44,3 +44,5 @@ yarn install
 
 - Start the server. 
 > You can use [glitch](https://glitch.com/) which is very friendly. However you will need to copy the code manually to glitch's IDE
+
+> TEST
